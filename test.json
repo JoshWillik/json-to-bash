@@ -1,0 +1,5 @@
+{
+  "remoteHost": "api.app.biz",
+  "authenticationOff": true,
+  "useTestServer": true
+}
