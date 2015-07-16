@@ -21,7 +21,7 @@ def generate_exports( data ):
     return exports
 
 def format_exports( exports ):
-    new_pairs = [ 'export ' + a + '=' + stringify_value(b) for a, b in exports ]
+    new_pairs = [ 'export ' + a + '="' + stringify_value(b) + '"' for a, b in exports ]
     return new_pairs
 
 def bashify_key( key, regex ):
@@ -46,8 +46,6 @@ def main():
         return print( '# There was an error parsing the provided json' )
 
     exports = generate_exports( data )
-    print( '# Generated exports' )
-    for export in format_exports( exports ):
-        print( export )
+    print( "\n".join( format_exports( exports ) ) )
 
 if __name__ == '__main__': main()
